@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>CKEditor Sample</title>
+    <!-- 引入ckeditor.js文件 -->
+    <script src="../ckeditor.js"></script>
+</head>
+<body>
+<form><textarea  id="editor1" rows="10" cols="80"></textarea>
+</form>
+<p><button type="button" id="btn" onclick="show()">获取</button></p>
+<textarea name="showeditor" id="editor2" rows="10" cols="80">
+</textarea>
+
+<script>
+    // 使用自定义配置
+    var editorConfig = {
+        customConfig: './samples/editorConfig.js'
+    };
+    CKEDITOR.replace( 'editor1',editorConfig);
+
+    function show(){
+       var content = CKEDITOR.instances.editor1.getData();
+       var editor2 = document.getElementById("editor2");
+       editor2.value = content;
+    }
+
+    CKEDITOR.instances.editor1.setData( '<p>This is the editor data.</p>' );
+</script>
+</body>
+</html>

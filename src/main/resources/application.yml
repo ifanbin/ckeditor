@@ -1,0 +1,15 @@
+server:
+  port: 9080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ckeditor?useSSL=false&autoReconnectForPools=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  mvc:
+    static-path-pattern: /**
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
